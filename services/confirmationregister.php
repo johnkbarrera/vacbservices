@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			pg_close($conn);
 		}
 
-	} else {2
+	} else {
 		$result["success"] = "0";
 		$result["message"] = "Código incorrecto, ingrese otro código";
 		
