@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$password = password_hash($password, PASSWORD_DEFAULT);
 	$user = $email;
 
-	require_once 'connection.php';
+	require_once '../DAO/connection.php';
 
 	//generar aleatorio
 	$cod_cof = "111111";
