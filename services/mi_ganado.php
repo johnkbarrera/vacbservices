@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-	$ganadero_id = $_POST['ganadero_id'];
+	$ganado_id = $_POST['ganado_id'];
 	$sesion = $_POST['sesion'];
 
 
@@ -10,23 +10,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	if ($sesion == "iniciado"){
 
-		$sql = "SELECT * FROM establo WHERE ganadero_id = ".$ganadero_id." ;";	
+		$sql = "SELECT * FROM ganado WHERE ganado_id = ".$ganado_id.";";	
+		//$sql = "SELECT * FROM ganado;";
+
 		$executed = pg_query($conn, $sql);
 
 	    $data = array();
 
 	    while ($line = pg_fetch_array($executed, null, PGSQL_ASSOC)) {
 	    	$data[] = array(
-	    		'establo_id' => $line['establo_id'],
+	    		'ganado_id' => $line['ganado_id'],
 				'nombre' => $line['nombre'],
-				'detalle' => $line['detalle'],
-				'pais' => $line['pais'],
-				'region' => $line['region'],
-				'ciudad' => $line['ciudad'],
-				'comuna' => $line['comuna'],
-				'latitud' => $line['latitud'],
-				'longitud' => $line['longitud'],
-				'altitud' => $line['altitud']
+				'registro' => $line['registro'],
+				'raza' => $line['raza'],
+				'procedencia' => $line['procedencia'],
+				'dob' => $line['dob'],
+				'pesodob' => $line['pesodob'],
+				'rgm' => $line['rgm'],
+				'rgp' => $line['rgp'],
+				'v_madre' => $line['v_madre'],
+				'v_padre' => $line['v_padre'],
+				'saca_estado' => $line['estado_saca'],
+				'saca_motivo' => $line['motivo_saca'],
+				'saca_fecha' => $line['fecha_saca']
 			);  
 	    }
 

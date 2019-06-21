@@ -1,9 +1,11 @@
 <?php
 
-$servidor = "172.22.3.169";
+// $servidor = "172.22.3.169";
+$servidor = "10.66.49.59";
 $usuario="postgres";
 $contrasenia="postgres";
-$base_datos="VACAS3";
+// $base_datos="VACAS3";
+$base_datos="vaca";
 $puerto="5432";
 
 //$conn = pg_connect($servidor, $puerto, "options", "tty", "dbname");

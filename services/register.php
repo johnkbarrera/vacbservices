@@ -2,6 +2,9 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+	$nombres = $_POST['nombres'];
+	$apellidos = $_POST['apellidos'];
+
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 	//$password = password_hash($password, PASSWORD_DEFAULT);
@@ -9,10 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$user = $email;
 
 	require_once '../DAO/connection.php';
-
-	//generar aleatorio
-	$cod_conf = "123456";
-	// Enviar email
 
 	// Verificamos si el correo ya fue registrado
 	$exist_email = 0;
@@ -28,10 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	if ($exist_email==0) {
 		// REGITRAMOS EL USUARIO - AUN NO ESTA CONFIRMADO
-		$sql = "INSERT INTO usuario(usuario, contrasenia, correo, estado, cod_conf) 
+		$sql = "INSERT INTO usuario(usuario, contrasenia, nombres, apellidos, correo, estado, cod_conf) 
 				VALUES (
 					'".$user."',
 					'".$password."',
+					'".$nombres."',
+					'".$apellidos."',
 					'".$email."',
 					false,
 					'".$cod_conf."'

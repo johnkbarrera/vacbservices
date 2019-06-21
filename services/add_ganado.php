@@ -11,53 +11,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$procedencia = $_POST['procedencia'];
 	$dob = $_POST['dob'];
 	$peso_dob = $_POST['peso_dob'];
+	$rgm = $_POST['rgm'];
+	$rgp = $_POST['rgp'];
+	$v_madre = $_POST['v_madre'];
+	$v_padre = $_POST['v_padre'];
 
-
-	//require_once '../DAO/connection.php';
+	require_once '../DAO/connection.php';
 
 	if ($sesion == "iniciado"){
 
-		/*$sql = "SELECT * FROM establo WHERE ganadero_id = ".$ganadero_id.";";	
+		$sql = "INSERT INTO ganado(nombre, registro, raza, procedencia, dob, pesodob, rgm, rgp, v_madre, v_padre, establo_id, estado_saca)
+				VALUES ('".$nombre."', '".$registro."', '".$raza."', '".$procedencia."', '".$dob."',".$peso_dob.", '".$rgm."', '".$rgp."', '".$v_madre."', '".$v_padre."', ".$establo_id.", false);";
+
 		$executed = pg_query($conn, $sql);
 
-	    $data = array();
-
-	    while ($line = pg_fetch_array($executed, null, PGSQL_ASSOC)) {
-	    	$data[] = array(
-	    		'establo_id' => $line['establo_id'],
-				'nombre' => $line['nombre'],
-				'detalle' => $line['detalle'],
-				'pais' => $line['pais'],
-				'region' => $line['region'],
-				'ciudad' => $line['ciudad'],
-				'comuna' => $line['comuna'],
-				'latitud' => $line['latitud'],
-				'longitud' => $line['longitud'],
-				'altitud' => $line['altitud']
-			);  
-	    }*/
-
-	    $result["success"] = "1";
-		// $result["message"] = $data;
-		$result["message"] = " ".$nombre."\n ".
-							 $registro ."\n".
-							 $raza ."\n".
-							 $procedencia ."\n".
-							 $dob."\n".
-							 $peso_dob;
-
-		//$result["message"] = "mensaje de exito";
-
-
-		echo json_encode($result);
-		//pg_close($conn);
-
+		if ($executed) {
+			$result["success"] = "1";
+			$result["message"] = "Registro exitoso";
+			echo json_encode($result);
+			pg_close($conn);
+		} else {
+			$result["success"] = "0";
+			$result["message"] = "Error en los Servicios";
+			echo json_encode($result);
+			pg_close($conn);
+		}
 	} else {
 		$result["success"] = "0";
 		$result["message"] = "Sesión no iniciada";
 
 		echo json_encode($result);
-		//pg_close($conn);
+		pg_close($conn);
 	}
 
 
