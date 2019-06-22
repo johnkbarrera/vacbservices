@@ -20,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	    while ($line = pg_fetch_array($executed, null, PGSQL_ASSOC)) {
 	    	$data[] = array(
 				'monitoreo_id' => $line['monitoreo_id'],
-				'c_somaticas' => $line['c_somaticas'],
 				'prof_ubre' => $line['prof_ubre'],
 				'prof_corp' => $line['prof_corp'],
 				'fecha' => $line['fecha'],

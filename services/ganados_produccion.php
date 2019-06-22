@@ -21,9 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	    		'produccion_id' => $line['produccion_id'],
 				'litros_leche' => $line['litros_leche'],
 				'solidos' => $line['solidos'],
+				'c_somaticas' => $line['c_somaticas'],
 				'estado_prod' => $line['estado_prod'],
 				'fecha' => $line['fecha'],
-				'peso' => $line['peso'],
+				'hora' => $line['hora'],
 			);  
 	    }
 
