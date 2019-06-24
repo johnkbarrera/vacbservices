@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	if ($sesion == "iniciado"){
 
-		$sql = "SELECT * FROM ganado WHERE establo_id = ".$establo_id." ORDER BY ganado_id DESC;";	
+		$sql = "SELECT * FROM ganado WHERE  estado_saca = False AND establo_id = ".$establo_id." ORDER BY ganado_id DESC;";	
 		//$sql = "SELECT * FROM ganado;";
 
 		$executed = pg_query($conn, $sql);
