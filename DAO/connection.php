@@ -10,7 +10,7 @@ $puerto="5432";
 
 //$conn = pg_connect($servidor, $puerto, "options", "tty", "dbname");
 
-$conn = pg_connect('host='.$servidor.' port='.$puerto.' dbname='.$base_datos.' user='.$usuario.' password='.$contrasenia);
+$conn = pg_Connect('host='.$servidor.' port='.$puerto.' dbname='.$base_datos.' user='.$usuario.' password='.$contrasenia);
 
 
 if (!$conn) {
