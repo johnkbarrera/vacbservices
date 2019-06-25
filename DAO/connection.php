@@ -15,9 +15,11 @@ $conn = pg_connect('host='.$servidor.' port='.$puerto.' dbname='.$base_datos.' u
 
 if (!$conn) {
   echo "An error occurred.\n";
+  echo $conn;
   exit;
 } else {
   echo "Conexión exitosa.\n";
+  echo $conn ;
 }
 
 
