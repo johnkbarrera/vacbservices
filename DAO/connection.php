@@ -12,7 +12,7 @@ $puerto="5432";
 
 $conn = pg_Connect('host='.$servidor.' port='.$puerto.' dbname='.$base_datos.' user='.$usuario.' password='.$contrasenia);
 
-
+/*
 if (!$conn) {
   echo "An error occurred.\n";
   echo $conn;
@@ -21,7 +21,7 @@ if (!$conn) {
   echo "Conexión exitosa.\n";
   echo $conn ;
 }
-
+*/
 
 
 ?>
