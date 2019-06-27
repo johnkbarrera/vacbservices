@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	// Verificamos si el correo ya fue registrado
 	$exist_email = 0;
-	$sql = "SELECT count(*) FROM usuario WHERE correo = '".$email."';";
+	$sql = "SELECT count(*) FROM usuario WHERE correo = '".$email."' AND perfil = 'GANADERO';";
 	$executed0 = pg_query($conn, $sql);
 	while ($line = pg_fetch_array($executed0, null, PGSQL_ASSOC)) {
 		$exist_email = $line['count'];
