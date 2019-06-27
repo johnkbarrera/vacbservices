@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	if ($exist_email == 1) {
 
-		$sql = "SELECT * FROM usuario WHERE usuario = '".$email."' AND contrasenia = '".$password."';";
+		$sql = "SELECT * FROM usuario WHERE usuario = '".$email."' AND contrasenia = '".$password."' AND perfil = 'GANADERO';";
 		$executed = pg_query($conn, $sql);
 		$data = array();
 
