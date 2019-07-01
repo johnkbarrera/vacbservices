@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		//  abri imagen y guardar, en una direccion
 
-		$path = "/var/www/html/vacbservices/Imagenes/".$nombre.".png";
+		$path = "/home/mnunez/Imágenes/vacas/".$nombre.".png";
 
 		//$path = "/home/administrator/Imágenes/vacbs/".$nombre.".png";
 		
