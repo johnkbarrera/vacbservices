@@ -12,9 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		//  abri imagen y guardar, en una direccion
 
-		$path = "../Imagenes/".$nombre.".png";
+		$path = "sudo ../Imagenes/".$nombre.".png";
 
-		$path2 = "../Imagenes/".$nombre.".txt";
+		$path2 = "sudo  ../Imagenes/".$nombre.".txt";
 
 		//$path = "/home/administrator/Imágenes/vacbs/".$nombre.".png";
 		
