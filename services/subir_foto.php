@@ -14,6 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		$path = "../Imagenes/".$nombre.".png";
 
+		$path = "/home/administrator/Imágenes/vacbs/".$nombre.".png";
+		
+
 		file_put_contents($path, base64_decode($imagen));
 		//$bytesArchivo = file_get_contents($path);
 
