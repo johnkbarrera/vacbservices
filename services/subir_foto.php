@@ -14,12 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		$path = "../Imagenes/".$nombre.".png";
 
+		$path2 = "../Imagenes/".$nombre.".txt";
+
 		//$path = "/home/administrator/Imágenes/vacbs/".$nombre.".png";
 		
 
 		file_put_contents($path, base64_decode($imagen));
 		//$bytesArchivo = file_get_contents($path);
-
+		file_put_contents($path2, "file_put_contents is fun to use!");
 
 		$result["success"] = "1";
 		$result["message"] = "Imagen guardada";
