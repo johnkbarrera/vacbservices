@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$imagen_file = base64_decode($imagen);
 		$imagen2 = base64_encode($imagen);
 
-		if($imagen2 == $imagen){
+		if($imagen2 === $imagen){
 
 			file_put_contents($path, base64_decode($imagen))
 
