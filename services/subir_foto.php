@@ -16,11 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		$path = "../Imagenes/".$nombre.".png";
 		
-		//$imagen_file = base64_decode($imagen)
+		$imagen_file = base64_decode($imagen);
 
-		if(base64_encode(base64_decode($imagen)) == $imagen){
+		if(file_put_contents($path, base64_decode($imagen))){
 
-			file_put_contents($path, $imagen_file)
 
 			$result["success"] = "1";
 			$result["message"] = "Imagen guardada";
