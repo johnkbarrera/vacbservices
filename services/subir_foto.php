@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		$path = "../Imagenes/".$nombre.".png";
 		
-		$imagen_file = base64_decode($imagen)
+		//$imagen_file = base64_decode($imagen)
 
 		if(base64_encode(base64_decode($imagen)) == $imagen){
 
