@@ -16,12 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		$path = "../Imagenes/".$nombre.".png";
 		
-		$str = 'VGhpcyBpcyBhbiBlbmNvZGVkIHN0cmluZw==';
-		$s  = base64_decode($str);
 
-		if($s == "This is an encoded string"){
-
-			//file_put_contents($path, base64_decode($imagen));
+		if(file_put_contents($path, base64_decode($imagen))){
 
 			$result["success"] = "1";
 			$result["message"] = "Imagen guardada";
