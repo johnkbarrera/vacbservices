@@ -16,11 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		$path = "../Imagenes/".$nombre.".png";
 		
+		$imagen_file = base64_decode($imagen)
 
-		if(file_put_contents($path, base64_decode($imagen))){
+		if($imagen_file){
+
+			file_put_contents($path, $imagen_file)
 
 			$result["success"] = "1";
-			$result["message"] = "Imagen guardada xd";
+			$result["message"] = "Imagen guardada";
 
 			echo json_encode($result);
 
