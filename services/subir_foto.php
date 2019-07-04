@@ -16,10 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		$path = "../Imagenes/".$nombre.".png";
 		
-		$imagen_file = base64_decode($imagen);
-		$imagen2 = base64_encode($imagen);
+		$str = 'VGhpcyBpcyBhbiBlbmNvZGVkIHN0cmluZw==';
+		$s  = base64_decode($str);
 
-		if($imagen2 === $imagen){
+		if($s == "This is an encoded string"){
 
 			//file_put_contents($path, base64_decode($imagen));
 
