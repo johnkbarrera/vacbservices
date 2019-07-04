@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		if(file_put_contents($path, base64_decode($imagen))){
 
 			$result["success"] = "1";
-			$result["message"] = "Imagen guardada";
+			$result["message"] = "Imagen guardada xd";
 
 			echo json_encode($result);
 
