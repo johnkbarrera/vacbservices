@@ -18,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$file = $path."/".$nombre.".png";
 		
 
-		if (!file_exists($path)) {
-    		mkdir($path, 0777, true);
+		if (!file_exists("/var/www/html/vacbservices/Imagenes/prueba")) {
+    		mkdir("/var/www/html/vacbservices/Imagenes/prueba", 0777, true);
 		}
 
 		if(file_put_contents($path, base64_decode($imagen))){
