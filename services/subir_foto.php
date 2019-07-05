@@ -7,6 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$nombre = $_POST['nombre'];
 	$imagen = $_POST['data'];
 
+	// despues de descargar el archivo en el terminal del admin 
+	// sudo chmod -R 777 /var/www
+
 
 	if ($sesion == "iniciado"){
 
