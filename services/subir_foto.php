@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		    mkdir($path, 0777, true);
 		}
 
-		if(file_put_contents($path, base64_decode($imagen))){
+		if(file_put_contents($file, base64_decode($imagen))){
 
 			$result["success"] = "1";
 			$result["message"] = "Imagen guardada";
