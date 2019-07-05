@@ -3,7 +3,7 @@
 $target_dir = "/var/www/html/vacbservices/Imagenes/";
 
 if (!file_exists($path)) {
-    mkdir($path, 0777, true);
+    mkdir($target_dir, 0777, true);
 }
 
 
