@@ -14,12 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		$path = "/home/administrator/Imágenes/vacas/".$nombre.".png";
 
-		$path = "../Imagenes/".$nombre.".png";
-
-
-
-		$path = "".$nombre.".png";
+		$path = "../Imagenes/prueba";
+		$file = $path."/".$nombre.".png";
 		
+
+		if (!file_exists($path)) {
+    		mkdir($path, 0777, true);
+		}
 
 		if(file_put_contents($path, base64_decode($imagen))){
 
