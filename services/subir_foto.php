@@ -15,9 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		//  abri imagen y guardar, en una direccion
 
-		$path = "/var/www/html/vacbservices/Imagenes/";
+		$path = "/var/www/html/vacbservices/Imagenes";
 		$file = $path."/".$nombre.".png";
 		
+
+		if (!file_exists($path)) {
+		    mkdir($path, 0777, true);
+		}
 
 		if(file_put_contents($path, base64_decode($imagen))){
 
