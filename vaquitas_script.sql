@@ -81,6 +81,7 @@ CREATE TABLE Monitoreo (
     monitoreo_id    SERIAL,
     prof_ubre       DECIMAL(5,2),
     prof_corp       DECIMAL(5,2),
+    bsc             NUMERIC,
     url_imagen_1      VARCHAR(500),
     url_imagen_2     VARCHAR(500),
     fecha           DATE,

@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	if ($sesion == "iniciado"){
 
-		$sql = 	"INSERT INTO public.monitoreo(prof_ubre, prof_corp, url_imagen_1, url_imagen_2, fecha, ganado_id)
-				 VALUES (0, 0, '".$imagen_frontal."', '".$imagen_posterior."', '".$fecha ."', ".$ganado_id.");";
+		$sql = 	"INSERT INTO public.monitoreo(prof_ubre, prof_corp, bsc,  url_imagen_1, url_imagen_2, fecha, ganado_id)
+				 VALUES (0, 0, 0, '".$imagen_frontal."', '".$imagen_posterior."', '".$fecha ."', ".$ganado_id.");";
 
 		$executed = pg_query($conn, $sql);
 
