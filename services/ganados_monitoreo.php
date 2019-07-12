@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 				'monitoreo_id' => $line['monitoreo_id'],
 				'prof_ubre' => $line['prof_ubre'],
 				'prof_corp' => $line['prof_corp'],
-				'bsc' => $line['bsc'],
+				'bsc' => $line['bsc'], 
 				'fecha' => $line['fecha'],
 			);  
 	    }
